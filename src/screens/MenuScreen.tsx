@@ -69,7 +69,6 @@ export default function MenuScreen({ navigation }: Props) {
       easing: Easing.out(Easing.cubic),
       useNativeDriver: true,
     }).start();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const moveHilite = (i: number) => {
