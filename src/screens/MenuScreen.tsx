@@ -98,7 +98,7 @@ export default function MenuScreen({ navigation }: Props) {
   const rightCircleSize = isSmall ? 100 : 120;
 
   const heroW = listW;
-  const heroHBase = Math.round(heroW * (isVerySmall ? 0.52 : isSmall ? 0.50 : 0.46));
+  const heroHBase = Math.round(heroW * (isVerySmall ? 0.52 : isSmall ? 0.5 : 0.46));
   const heroH = heroHBase + (isVerySmall ? 20 : 30);
   const heroPad = isVerySmall ? 12 : isSmall ? 14 : 16;
 
@@ -115,7 +115,13 @@ export default function MenuScreen({ navigation }: Props) {
         pointerEvents="none"
         style={[
           styles.rightCircle,
-          { width: rightCircleSize, height: rightCircleSize, borderRadius: rightCircleSize, top: topPad + 90, right: 22 },
+          {
+            width: rightCircleSize,
+            height: rightCircleSize,
+            borderRadius: rightCircleSize,
+            top: topPad + 90,
+            right: 22,
+          },
         ]}
       />
 
@@ -186,9 +192,11 @@ export default function MenuScreen({ navigation }: Props) {
           <Text style={[styles.settingsText, { fontSize: isVerySmall ? 18 : isSmall ? 20 : 22 }]}>Settings</Text>
         </Pressable>
 
-        <View style={{ height: isVerySmall ? 8 : 10 }} />
-
-        <Image source={LOGO} style={{ width: logoSize, height: logoSize, opacity: 0.95 }} resizeMode="contain" />
+        <Image
+          source={LOGO}
+          style={{ width: logoSize, height: logoSize, opacity: 0.95, marginTop: -30 }}
+          resizeMode="contain"
+        />
 
         <View style={{ height: Math.max(insets.bottom, 12) }} />
       </Animated.View>
